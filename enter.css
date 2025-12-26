@@ -1,0 +1,127 @@
+/* GLOBAL */
+html, body {
+  margin: 0;
+  padding: 0;
+  height: 100%;
+  background: black;
+  overflow: hidden;
+  font-family: system-ui, sans-serif;
+  touch-action: none; /* page never scrolls */
+}
+
+/* NEXT BUTTON */
+#next-ui {
+  position: fixed;
+  top: 4%;
+  right: 4%;
+  z-index: 1000;
+  text-align: right;
+}
+
+.next-text {
+  font-size: 0.7rem;
+  letter-spacing: 0.2em;
+  color: rgba(255,120,120,0.7);
+  margin-bottom: 6px;
+}
+
+#enter-next-btn {
+  padding: 10px 22px;
+  border-radius: 999px;
+  background: rgba(255,0,0,0.2);
+  border: 1px solid rgba(255,0,0,0.5);
+  color: rgba(255,180,180,1);
+  letter-spacing: 0.2em;
+}
+
+/* GALLERY */
+.gallery-wrapper {
+  height: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.gallery-track {
+  display: flex;
+  gap: 32px;
+  transition: transform 0.9s ease;
+}
+
+/* CARD */
+.card {
+  width: 70vw;               /* 16:9 phone friendly */
+  max-width: 280px;
+  flex-shrink: 0;
+  transform: scale(0.75);
+  opacity: 0.35;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  transition: transform 0.6s ease, opacity 0.6s ease;
+}
+
+.card.active {
+  transform: scale(1);
+  opacity: 1;
+}
+
+/* IMAGE */
+.card img {
+  width: 100%;
+  height: 50vh;
+  object-fit: cover;
+  border-radius: 26px;
+  box-shadow: 0 0 28px rgba(255,0,0,0.2);
+}
+
+/* PREVIEW TEXT (NORMAL MODE) */
+.caption-preview {
+  margin-top: 14px;
+  font-size: 0.8rem;
+  letter-spacing: 0.15em;
+  color: rgba(255,80,80,0.9);
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  opacity: 0;
+}
+
+.card.active .caption-preview {
+  opacity: 1;
+}
+
+/* COMMENT BOX */
+.comment-box {
+  display: none;
+  margin-top: 16px;
+  max-height: 24vh;
+  padding: 14px;
+  border-radius: 14px;
+  background: rgba(255,0,0,0.08);
+  color: rgba(255,220,220,0.95);
+  line-height: 1.6;
+  overflow-y: auto;
+  touch-action: pan-y; /* vertical scroll only */
+}
+
+/* FOCUS MODE */
+.gallery-wrapper.focus-mode .card {
+  transform: scale(0.6);
+  opacity: 0.15;
+  filter: blur(2px);
+}
+
+.gallery-wrapper.focus-mode .card.active {
+  transform: scale(1.15);
+  opacity: 1;
+  filter: none;
+}
+
+.gallery-wrapper.focus-mode .caption-preview {
+  display: none;
+}
+
+.gallery-wrapper.focus-mode .card.active .comment-box {
+  display: block;
+}

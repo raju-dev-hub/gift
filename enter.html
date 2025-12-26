@@ -1,0 +1,90 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <title>Enter</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <link rel="stylesheet" href="enter.css" />
+</head>
+
+<body>
+
+  <!-- NEXT BUTTON -->
+  <div id="next-ui">
+    <div class="next-text">Click here after done</div>
+    <button id="enter-next-btn">NEXT</button>
+  </div>
+
+  <!-- GALLERY -->
+  <div class="gallery-wrapper">
+    <div class="gallery-track">
+
+      <!-- CARD TEMPLATE (repeat) -->
+      <div class="card active">
+        <img src="p1.png" />
+        <div class="caption-preview">Your eyes feel like a quiet recreation…</div>
+        <div class="comment-box">
+          Your eyes feel like a quiet recreation of a black hole—
+          deep, powerful, and impossible to ignore.
+        </div>
+      </div>
+
+      <div class="card">
+        <img src="p2.png" />
+        <div class="caption-preview">Your smile softens everything…</div>
+        <div class="comment-box">Full text here…</div>
+      </div>
+
+      <div class="card">
+        <img src="p3.png" />
+        <div class="caption-preview">Your hair flows freely…</div>
+        <div class="comment-box">Full text here…</div>
+      </div>
+
+      <div class="card">
+        <img src="p4.png" />
+        <div class="caption-preview">Your hands feel warm…</div>
+        <div class="comment-box">Full text here…</div>
+      </div>
+
+      <div class="card">
+        <img src="p5.png" />
+        <div class="caption-preview">Your figure is magnetic…</div>
+        <div class="comment-box">Full text here…</div>
+      </div>
+
+      <div class="card">
+        <img src="p6.png" />
+        <div class="caption-preview">Your voice feels like nature whispering…</div>
+        <div class="comment-box">
+          Your voice feels like nature whispering instead of speaking.
+          It arrives gently, like a breeze that doesn’t want to disturb anything.
+
+          When you sing, even the wind feels quieter,
+          as if it’s listening to you.
+
+          Your voice flows like the sea at dawn—
+          calm, steady, and full of quiet depth.
+
+          There’s a warmth in your voice
+          that settles into me slowly,
+          like waves touching the shore without urgency.
+
+          I don’t just hear your voice;
+          I feel comforted by it,
+          as if it knows exactly where to rest inside me.
+        </div>
+      </div>
+
+    </div>
+  </div>
+
+  <script src="enter.js"></script>
+  <script>
+    document.getElementById("enter-next-btn").onclick = () => {
+      location.href = "next.html";
+    };
+  </script>
+
+</body>
+</html>
