@@ -1,4 +1,6 @@
-/* GLOBAL */
+/* ===============================
+   GLOBAL
+   =============================== */
 html, body {
   margin: 0;
   padding: 0;
@@ -9,7 +11,9 @@ html, body {
   touch-action: none; /* page never scrolls */
 }
 
-/* NEXT BUTTON */
+/* ===============================
+   NEXT BUTTON
+   =============================== */
 #next-ui {
   position: fixed;
   top: 4%;
@@ -32,9 +36,12 @@ html, body {
   border: 1px solid rgba(255,0,0,0.5);
   color: rgba(255,180,180,1);
   letter-spacing: 0.2em;
+  cursor: pointer;
 }
 
-/* GALLERY */
+/* ===============================
+   GALLERY LAYOUT
+   =============================== */
 .gallery-wrapper {
   height: 100%;
   display: flex;
@@ -48,9 +55,11 @@ html, body {
   transition: transform 0.9s ease;
 }
 
-/* CARD */
+/* ===============================
+   CARD
+   =============================== */
 .card {
-  width: 70vw;               /* 16:9 phone friendly */
+  width: 70vw;
   max-width: 280px;
   flex-shrink: 0;
   transform: scale(0.75);
@@ -66,7 +75,9 @@ html, body {
   opacity: 1;
 }
 
-/* IMAGE */
+/* ===============================
+   IMAGE
+   =============================== */
 .card img {
   width: 100%;
   height: 50vh;
@@ -75,7 +86,9 @@ html, body {
   box-shadow: 0 0 28px rgba(255,0,0,0.2);
 }
 
-/* PREVIEW TEXT (NORMAL MODE) */
+/* ===============================
+   PREVIEW TEXT (NORMAL MODE)
+   =============================== */
 .caption-preview {
   margin-top: 14px;
   font-size: 0.8rem;
@@ -91,7 +104,9 @@ html, body {
   opacity: 1;
 }
 
-/* COMMENT BOX */
+/* ===============================
+   COMMENT BOX (BASE)
+   =============================== */
 .comment-box {
   display: none;
   margin-top: 16px;
@@ -102,10 +117,20 @@ html, body {
   color: rgba(255,220,220,0.95);
   line-height: 1.6;
   overflow-y: auto;
-  touch-action: pan-y; /* vertical scroll only */
+
+  touch-action: pan-y;              /* vertical swipe only */
+  overscroll-behavior: contain;     /* stop page hijack */
+  -webkit-overflow-scrolling: touch;
 }
 
-/* FOCUS MODE */
+/* hide scrollbar (optional but nice) */
+.comment-box::-webkit-scrollbar {
+  width: 0;
+}
+
+/* ===============================
+   FOCUSED MODE
+   =============================== */
 .gallery-wrapper.focus-mode .card {
   transform: scale(0.6);
   opacity: 0.15;
@@ -122,6 +147,7 @@ html, body {
   display: none;
 }
 
+/* 🔥 THIS IS THE KEY LINE 🔥 */
 .gallery-wrapper.focus-mode .card.active .comment-box {
   display: block;
 }
